@@ -1,0 +1,8 @@
+<div class="form-group">
+  <input type="text" class="form-control input-code" placeholder="Insira cálculo aqui..." value="@Expression" readonly>
+</div>
+
+@code {
+  [Parameter]
+  public string Expression {get; set;} = "";
+}

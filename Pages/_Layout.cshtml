@@ -1,0 +1,31 @@
+﻿@using Microsoft.AspNetCore.Components.Web
+@namespace BlazorApp.Pages
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no" />
+    <base href="~/" />
+    @* Umbootstrap *@
+    <link rel="icon" type="image/png" sizes="192x192" href="//assets.umbler.com/site/favicons/android-icon-192x192.png?v=20200909051244">
+	<link rel="icon" type="image/png" sizes="96x96" href="//assets.umbler.com/site/favicons/favicon-96x96.png?v=20200909051244">
+	<link rel="icon" type="image/png" sizes="32x32" href="//assets.umbler.com/site/favicons/favicon-32x32.png?v=20200909051244">
+	<link rel="icon" type="image/png" sizes="16x16" href="//assets.umbler.com/site/favicons/favicon-16x16.png?v=20200909051244">
+    <link rel="stylesheet" href="//design.umbler.com/themes/umbler-site/dist/css/theme.min.css?v=222">
+    @* Other Styles *@
+    <link rel="stylesheet" href="/css/style.css">
+    <component type="typeof(HeadOutlet)" render-mode="ServerPrerendered" />
+</head>
+<body>
+    @RenderBody()
+    <script src="_framework/blazor.server.js"></script>
+    @* Umbootstrap JS *@
+    <script src="//cdn.jsdelivr.net/g/jquery@3.1.1,underscorejs@1.8.3(underscore.js),tether@1.4.0"></script>
+    <script src="//design.umbler.com/assets/dist/js/bootstrap.min.js"></script>
+    <script src="//design.umbler.com/themes/umbler-site/dist/js/theme.min.js?v=2"></script>
+    @* Other JS *@
+    <script src="/javascript/script.js"></script>
+</body>
+</html>
