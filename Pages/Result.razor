@@ -1,8 +1,15 @@
+@using System.Linq.Expressions
 <div class="form-group">
-  <input type="text" class="form-control input-code" placeholder="Insira cálculo aqui..." value="@Expression" readonly>
+    <InputText class="form-control input-code" placeholder="Insira cálculo aqui..." Value=@Expression ValueChanged=ExpressionChanged ValueExpression=ExpressionExpression />
 </div>
 
 @code {
-  [Parameter]
-  public string Expression {get; set;} = "";
+    [Parameter]
+    public string Expression { get; set; } = string.Empty;
+
+    [Parameter]
+    public EventCallback<string> ExpressionChanged { get; set; }
+
+    [Parameter]
+    public Expression<Func<string>>? ExpressionExpression { get; set; }
 }

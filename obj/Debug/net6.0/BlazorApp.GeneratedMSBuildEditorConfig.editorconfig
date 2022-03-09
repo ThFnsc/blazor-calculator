@@ -8,41 +8,45 @@ build_property.PlatformNeutralAssembly =
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = BlazorApp
 build_property.RootNamespace = BlazorApp
-build_property.ProjectDir = E:\Code\Github-Projects\blazor-calculator\
+build_property.ProjectDir = C:\Users\thfns\Downloads\isaac\
 build_property.RazorLangVersion = 6.0
 build_property.SupportLocalizedComponentNames = 
 build_property.GenerateRazorMetadataSourceChecksumAttributes = 
-build_property.MSBuildProjectDirectory = E:\Code\Github-Projects\blazor-calculator
+build_property.MSBuildProjectDirectory = C:\Users\thfns\Downloads\isaac
 build_property._RazorSourceGeneratorDebug = 
 
-[E:/Code/Github-Projects/blazor-calculator/App.razor]
+[C:/Users/thfns/Downloads/isaac/App.razor]
 build_metadata.AdditionalFiles.TargetPath = QXBwLnJhem9y
 build_metadata.AdditionalFiles.CssScope = 
 
-[E:/Code/Github-Projects/blazor-calculator/Pages/Index.razor]
+[C:/Users/thfns/Downloads/isaac/Pages/Index.razor]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcSW5kZXgucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = 
 
-[E:/Code/Github-Projects/blazor-calculator/Pages/Result.razor]
+[C:/Users/thfns/Downloads/isaac/Pages/Result.razor]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUmVzdWx0LnJhem9y
 build_metadata.AdditionalFiles.CssScope = 
 
-[E:/Code/Github-Projects/blazor-calculator/Shared/MainLayout.razor]
+[C:/Users/thfns/Downloads/isaac/Shared/CalcBtn.razor]
+build_metadata.AdditionalFiles.TargetPath = U2hhcmVkXENhbGNCdG4ucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/thfns/Downloads/isaac/Shared/MainLayout.razor]
 build_metadata.AdditionalFiles.TargetPath = U2hhcmVkXE1haW5MYXlvdXQucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = 
 
-[E:/Code/Github-Projects/blazor-calculator/_Imports.razor]
+[C:/Users/thfns/Downloads/isaac/_Imports.razor]
 build_metadata.AdditionalFiles.TargetPath = X0ltcG9ydHMucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = 
 
-[E:/Code/Github-Projects/blazor-calculator/Pages/Error.cshtml]
+[C:/Users/thfns/Downloads/isaac/Pages/Error.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRXJyb3IuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[E:/Code/Github-Projects/blazor-calculator/Pages/_Host.cshtml]
+[C:/Users/thfns/Downloads/isaac/Pages/_Host.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcX0hvc3QuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[E:/Code/Github-Projects/blazor-calculator/Pages/_Layout.cshtml]
+[C:/Users/thfns/Downloads/isaac/Pages/_Layout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcX0xheW91dC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 

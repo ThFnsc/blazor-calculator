@@ -7,38 +7,40 @@
   <div class="row">
     <div class="col-md-12">
       <div class="card card-block mt-4">
-        <Result Expression="@expression"/>
-        <div class="form-group">
-          <input id="answer" type="text" class="form-control" readonly>
-        </div>
+        <EditForm Model="new{}">
+            <Result @bind-Expression=_expression />
+            <div class="form-group">
+              <InputText @bind-Value=_answer class="form-control" readonly />
+            </div>
+        </EditForm>
         <div>
           <div class="flex-xs flex-xs-around my-1">
-            <input type="button" value="C" @onclick="() => {clearExpression();}"class="btn btn-accent width-50">
-            <input type="button" value="/" @onclick="() => {assembleValue('/');}"class="btn btn-primary width-25">
-            <input type="button" value="*" @onclick="() => {assembleValue('*');}" class="btn btn-primary width-25">
+            <CalcBtn Value="C" Clicked=ClearExpression Color="accent" WidthPercentage=50 />
+            <CalcBtn Value="/" Clicked=AssembleValue />
+            <CalcBtn Value="*" Clicked=AssembleValue />
           </div>
           <div class="flex-xs flex-xs-around my-1">
-            <input type="button" value="7" @onclick="() => {assembleValue('7');}" class="btn btn-primary width-25">
-            <input type="button" value="8" @onclick="() => {assembleValue('8');}" class="btn btn-primary width-25">
-            <input type="button" value="9" @onclick="() => {assembleValue('9');}" class="btn btn-primary width-25">
-            <input type="button" value="-" @onclick="() => {assembleValue('-');}" class="btn btn-primary width-25">
+            <CalcBtn Value="7" Clicked=AssembleValue />
+            <CalcBtn Value="8" Clicked=AssembleValue />
+            <CalcBtn Value="9" Clicked=AssembleValue />
+            <CalcBtn Value="-" Clicked=AssembleValue />
           </div>
           <div class="flex-xs flex-xs-around my-1">
-            <input type="button" value="6" @onclick="() => {assembleValue('6');}" class="btn btn-primary width-25">
-            <input type="button" value="5" @onclick="() => {assembleValue('5');}" class="btn btn-primary width-25">
-            <input type="button" value="4" @onclick="() => {assembleValue('4');}" class="btn btn-primary width-25">
-            <input type="button" value="+" @onclick="() => {assembleValue('+');}" class="btn btn-primary width-25">
+            <CalcBtn Value="6" Clicked=AssembleValue />
+            <CalcBtn Value="5" Clicked=AssembleValue />
+            <CalcBtn Value="4" Clicked=AssembleValue />
+            <CalcBtn Value="+" Clicked=AssembleValue />
           </div>
           <div class="flex-xs flex-xs-around my-1">
-            <input type="button" value="3" @onclick="() => {assembleValue('3');}"class="btn btn-primary width-25">
-            <input type="button" value="2" @onclick="() => {assembleValue('2');}" class="btn btn-primary width-25">
-            <input type="button" value="1" @onclick="() => {assembleValue('1');}" class="btn btn-primary width-25">
-            <input type="button" value="😉" @onclick="@Irra" class="btn btn-primary width-25">
+            <CalcBtn Value="3" Clicked=AssembleValue />
+            <CalcBtn Value="2" Clicked=AssembleValue />
+            <CalcBtn Value="1" Clicked=AssembleValue />
+            <CalcBtn Value="😉" Clicked=Irra />
           </div>
           <div class="flex-xs flex-xs-around my-1">
-            <input type="button" value="0" @onclick="() => {assembleValue('0');}" class="btn btn-primary width-25">
-            <input type="button" value="." @onclick="() => {assembleValue('.');}" class="btn btn-primary width-25">
-            <input type="button" value="=" @onclick="@EvaluateCalc" class="btn btn-success width-50">
+            <CalcBtn Value="0" Clicked=AssembleValue />
+            <CalcBtn Value="." Clicked=AssembleValue />
+            <CalcBtn Value="=" Clicked=EvaluateCalc Color="success" WidthPercentage=50 />
           </div>
         </div>
       </div>
@@ -47,29 +49,32 @@
 </div>
 
 @code {
-  public string expression = "";
+    private string _expression = string.Empty, _answer = string.Empty;
 
-  @* Adiciona os valores na variável *@
-  public void assembleValue(char value)
-  {
-    expression += value;
-  }
+    /// <summary>
+    /// Adiciona os valores na variável
+    /// </summary>
+    private void AssembleValue(string value) =>
+        _expression += value;
 
-  @* Limpa cálculo *@
-  public void clearExpression() {
-    expression = String.Empty;
-    StateHasChanged();
-  }
+    /// <summary>
+    /// Limpa cálculo
+    /// </summary>
+    private void ClearExpression() =>
+        _expression = _answer = string.Empty;
 
-  @* Realiza o cálculo passado *@
-  async Task EvaluateCalc() 
-  {
-    await JsRuntime.InvokeVoidAsync(identifier: "evalCalc", "answer", expression);
-  }
+    /// <summary>
+    /// Realiza o cálculo passado
+    /// </summary>
+    private async Task EvaluateCalc() 
+    {
+        var result = await JsRuntime.InvokeAsync<decimal>(identifier: "evalCalc", _expression);
+        _answer = result.ToString();
+    }
 
-  @* Só ignora isso aqui, UI things *@
-  async Task Irra()
-  {
-    await JsRuntime.InvokeVoidAsync(identifier: "voceNaoViuNada");
-  }
+    /// <summary>
+    /// Só ignora isso aqui, UI things
+    /// </summary>
+    private Task Irra() =>
+        JsRuntime.InvokeVoidAsync(identifier: "alert", "Nada por aqui, apenas ignore este botão... 🤫").AsTask();
 }

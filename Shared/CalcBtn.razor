@@ -1,0 +1,15 @@
+<input type="button" value=@Value @onclick="() => Clicked.InvokeAsync(Value)" class="btn btn-@Color width-@WidthPercentage">
+
+@code {
+    [Parameter, EditorRequired]
+    public string? Value { get; set; }
+
+    [Parameter]
+    public string Color { get; set; } = "primary";
+
+    [Parameter, EditorRequired]
+    public EventCallback<string> Clicked { get; set; }
+
+    [Parameter]
+    public int WidthPercentage { get; set; } = 25;
+}
