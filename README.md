@@ -1,6 +1,6 @@
 # blazor-calculator
 
-Calculadora desenvolvida com o uso do framework Blazor, essa calculadora serviu como uma parte extra não obrigatório do teste para desenvolvedor front-end júnior da [Umlber](https://umbler.com/br).
+Calculadora desenvolvida com o uso do framework Blazor, essa calculadora serviu como uma parte extra não obrigatório do teste para desenvolvedor front-end júnior da [Umbler](https://umbler.com/br).
 
 Para desenvolver a mesma, utilizei apenas o Umbootstrap 🐨 junto do Blazor @.
 
